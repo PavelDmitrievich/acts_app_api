@@ -1,11 +1,16 @@
 import React from 'react';
-import {Link} from "react-router";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import {logout} from '../actions/auth/login-page';
+import { Input, Menu } from 'semantic-ui-react';
+import { Container, Icon } from 'semantic-ui-react';
 
 
 class Layout extends React.Component {
+
+  state = { activeItem: 'home' };
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   handleLogoutClick = (e) => {
     e.preventDefault();
@@ -14,39 +19,27 @@ class Layout extends React.Component {
 
   render() {
     const {isLoggedIn} = this.props;
+    const { activeItem } = this.state;
     return (
-      <div>
+      <Container fluid>
         {isLoggedIn && <div>
 
-          <nav className="navbar navbar-default">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span className="sr-only">Toggle navigation</span>
-                  <span className="icon-bar"/>
-                  <span className="icon-bar"/>
-                  <span className="icon-bar"/>
-                </button>
-                <i className="navbar-brand"><Link to="/"><div className="brand_image"/></Link></i>
-              </div>
-
-              <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul className="nav navbar-nav navbar-right">
-                  <li>
-                    <a href="#logout" onClick={this.handleLogoutClick}>
-                      <span className="glyphicon glyphicon-log-out"/>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+          <Menu secondary>
+            <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+            <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
+            <Menu.Item name='friends' active={activeItem === 'friends'} onClick={this.handleItemClick} />
+            <Menu.Menu position='right'>
+              <Menu.Item>
+                <Input icon='search' placeholder='Search...' />
+              </Menu.Item>
+              <Menu.Item onClick={this.handleLogoutClick}><Icon name="log out"/></Menu.Item>
+            </Menu.Menu>
+          </Menu>
 
         </div>
         }
         {this.props.children}
-      </div>
+      </Container>
     )
   }
 }

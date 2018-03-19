@@ -1,5 +1,6 @@
 import {post} from "../request";
 import {push} from 'react-router-redux';
+import {toastr} from "react-redux-toastr";
 
 export const REQUEST = '@LOGIN_PAGE/REQUEST';
 export const REQUEST_SUCCESS = '@LOGIN_PAGE/REQUEST_SUCCESS';
@@ -21,7 +22,8 @@ export function login() {
       localStorage.setItem('token', auth_token);
       dispatch(push('/'));
     }).catch((errors) => {
-      console.log('errors ==> ', errors);
+      console.log('errors ==> ', errors.message);
+      toastr.error(errors.message);
       dispatch({type: REQUEST_FAILURE, errors})
     })
   }

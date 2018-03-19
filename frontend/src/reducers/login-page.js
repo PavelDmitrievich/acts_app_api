@@ -9,9 +9,6 @@ import {
   LOGOUT
 } from '../actions/auth/login-page';
 
-const INITIAL_ERRORS_STATE = {
-  global_errors: ''
-};
 const INITIAL_STATE = {
   isProcessing: false,
   token: null,
@@ -24,7 +21,7 @@ const INITIAL_STATE = {
 export default createReducer({
   [REQUEST]: (state, action) => merge(state, {
     isProcessing: true,
-    errors: INITIAL_ERRORS_STATE
+    errors: ''
   }),
   [REQUEST_SUCCESS]: (state, action) => merge(state, {
     isProcessing: false,
@@ -38,10 +35,12 @@ export default createReducer({
     errors: action.errors.message
   }),
   [CHANGE_EMAIL]: (state, action) => merge(state, {
-    email: action.email
+    email: action.email,
+    errors: ''
   }),
   [CHANGE_PASSWORD]: (state, action) => merge(state, {
-    password: action.password
+    password: action.password,
+    errors: ''
   }),
   [LOGOUT]: (state, action) => merge(state, {
     isLoggedIn: false,

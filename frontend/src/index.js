@@ -6,4 +6,5 @@ const application = Application.createApplication();
 application.init();
 application.start();
 
+
 registerServiceWorker();

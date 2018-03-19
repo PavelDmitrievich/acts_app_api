@@ -8,6 +8,7 @@ import configureStore from "./store";
 import Root from "./containers/Root";
 import {logout, loadAuth} from './actions/auth/login-page';
 
+
 export default class Application {
   static createApplication() {
     return new Application();
@@ -50,17 +51,9 @@ export default class Application {
 
   renderComponent(Component) {
     ReactDOM.render((
-      <div>
-        <div className=" context" style={{paddingBottom: '60px'}}>
-
-          <AppContainer>
-            <Component store={this.store} history={this.history}/>
-          </AppContainer>
-        </div>
-        <footer>
-          <div className="made_in">Developed by <a target='_blank' href="http://attractor-software.com">PAVEL</a></div>
-        </footer>
-      </div>
+      <AppContainer>
+        <Component store={this.store} history={this.history}/>
+      </AppContainer>
     ), document.getElementById('root'))
   }
 

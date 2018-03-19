@@ -6,7 +6,10 @@ import MainPage from '../components/MainPage';
 
 
 function mapStateToProps(state) {
-    return state.mainPage
+    return {
+      ...state.loginPage,
+      ...state.mainPage
+    }
 }
 
 function mapDispatchToProps(dispatch) {

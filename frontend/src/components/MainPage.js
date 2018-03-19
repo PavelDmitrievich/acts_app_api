@@ -2,17 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class MainPage extends React.Component {
-  static propTypes = {
-    loginActions: PropTypes.shape({
-      logout: PropTypes.func.isRequired
-    })
+  static propTypes  = {
   };
 
-  render() {
+  componentDidMount() {
+    if (!this.props.isLoggedIn) {
+      window.location = "/login"
+    }
+  };
 
+  render () {
     return (
-      <div className="container">
-        <h1>WORK</h1>
+      <div>
+        <h1>MAIN PAGE</h1>
       </div>
     )
   }
