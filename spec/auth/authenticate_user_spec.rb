@@ -24,7 +24,7 @@ RSpec.describe AuthenticateUser do
         expect { invalid_auth_obj.call }
           .to raise_error(
             ExceptionHandler::AuthenticationError,
-            /Invalid credentials/
+            /Недопустимые учетные данные/
           )
       end
     end
