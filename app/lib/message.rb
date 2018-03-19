@@ -1,22 +1,22 @@
 class Message
   def self.not_found(record = 'record')
-    "Sorry, #{record} not found."
+    "Извините, #{record} не найдено :("
   end
 
   def self.invalid_credentials
-    'Invalid credentials'
+    'Недопустимые учетные данные'
   end
 
   def self.invalid_token
-    'Invalid token'
+    'Недопустимый токен'
   end
 
   def self.missing_token
-    'Missing token'
+    'Отсутствует токен'
   end
 
   def self.unauthorized
-    'Unauthorized request'
+    'Несанкционированный запрос'
   end
 
   def self.account_created
@@ -24,10 +24,10 @@ class Message
   end
 
   def self.account_not_created
-    'Account could not be created'
+    'Аккаунт успешно создан!'
   end
 
   def self.expired_token
-    'Sorry, your token has expired. Please login to continue.'
+    'Извините, ваш токен истек. Пожалуйста, войдите, чтобы продолжить.'
   end
 end
