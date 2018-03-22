@@ -1,5 +1,7 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~semantic-ui-css/semantic.min.css';
 @import '~react-redux-toastr/lib/css/react-redux-toastr.min.css';
+@import '~react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
 .login-form {
     height: 100%;

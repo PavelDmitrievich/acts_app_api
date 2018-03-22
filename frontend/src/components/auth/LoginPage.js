@@ -36,7 +36,6 @@ class LoginPage extends React.Component {
 
   render() {
     const {email, password, isProcessing, errors} = this.props;
-    console.log('errors ===> ', this.props.errors.length);
     const hasError = errors !== undefined && errors !== '';
     return (
       <Container textAlign='center'>

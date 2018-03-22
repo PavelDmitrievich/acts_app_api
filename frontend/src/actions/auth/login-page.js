@@ -20,9 +20,9 @@ export function login() {
 
       dispatch({type: REQUEST_SUCCESS, auth_token});
       localStorage.setItem('token', auth_token);
+      localStorage.setItem('user_name', user);
       dispatch(push('/'));
     }).catch((errors) => {
-      console.log('errors ==> ', errors.message);
       toastr.error(errors.message);
       dispatch({type: REQUEST_FAILURE, errors})
     })
@@ -40,6 +40,7 @@ export function changePassword(password) {
 export function logout() {
   return (dispatch) => {
     localStorage.removeItem('token');
+    localStorage.removeItem('user_name');
     dispatch({type: LOGOUT});
     dispatch(push('/login'));
   }
