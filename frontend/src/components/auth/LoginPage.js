@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Form, Container, Message} from 'semantic-ui-react';
+import {Link} from "react-router";
 
 
 class LoginPage extends React.Component {
@@ -53,7 +54,8 @@ class LoginPage extends React.Component {
                         placeholder='password' value={password} onChange={this.handlePasswordChange}/>
           </Form.Group>
           <Form.Checkbox label='I agree to the Terms and Conditions'/>
-          <Form.Button disabled={isProcessing}>Submit</Form.Button>
+          <Form.Button disabled={isProcessing}>Login</Form.Button>
+          <Link to="/registration">Sign up</Link>
         </Form>
       </Container>
     )

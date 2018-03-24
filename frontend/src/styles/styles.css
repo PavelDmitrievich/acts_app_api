@@ -6,3 +6,15 @@
 .login-form {
     height: 100%;
 }
+
+.checkmark {
+    color: green;
+}
+
+.ui.icon.input>i.icon {
+    opacity: 1;
+}
+
+.remove {
+    color: red;
+}

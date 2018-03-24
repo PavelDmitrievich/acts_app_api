@@ -17,7 +17,6 @@ export function login() {
 
     return post('/api/auth/login', {email, password}).then((response) => {
       const {auth_token, user} = response;
-
       dispatch({type: REQUEST_SUCCESS, auth_token});
       localStorage.setItem('token', auth_token);
       localStorage.setItem('user_name', user);

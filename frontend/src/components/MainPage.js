@@ -23,7 +23,7 @@ class MainPage extends React.Component {
     return (
       <div>
         <h1>Привет, {localStorage.getItem('user_name')}!</h1>
-        <BootstrapTable data={ acts }>
+        <BootstrapTable data={ acts } search pagination>
           <TableHeaderColumn dataField='act_number' isKey>Порядковый номер акта</TableHeaderColumn>
           <TableHeaderColumn dataField='conclusion'>Заключение</TableHeaderColumn>
           <TableHeaderColumn dataField='storage_id'>Номер склада</TableHeaderColumn>
