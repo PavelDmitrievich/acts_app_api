@@ -17,13 +17,13 @@ user = User.create!(
     email: "qwe@qwe.qwe",
     password: "qweqwe",
     password_confirmation: "qweqwe",
-    "sir_name": "Smith",
-    "position": "BOSS"
+    sir_name: "Smith",
+    position: "BOSS"
 )
 
 15.times do |n|
   Act.create!(
-      act_number: 1,
+      act_number: n + 1,
       organization: "Филиал ГП НК КТЖ по В",
       conclusion: Faker::Demographic.race,
       score: "123345, 5672345467",
