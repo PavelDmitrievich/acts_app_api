@@ -20,11 +20,11 @@ class Message
   end
 
   def self.account_created
-    'Account created successfully'
+    'Аккаунт успешно создан!'
   end
 
   def self.account_not_created
-    'Аккаунт успешно создан!'
+    'Аккаунт не создан!'
   end
 
   def self.expired_token
